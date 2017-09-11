@@ -47,6 +47,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configurations\RentalConfiguration.cs" />
+    <Compile Include="Configurations\StationConfiguration.cs" />
+    <Compile Include="Configurations\UserConfiguration.cs" />
+    <Compile Include="Migrations\201709111034499_InitialCreate.cs" />
+    <Compile Include="Migrations\201709111034499_InitialCreate.Designer.cs">
+      <DependentUpon>201709111034499_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709111205258_ChangeUser.cs" />
+    <Compile Include="Migrations\201709111205258_ChangeUser.Designer.cs">
+      <DependentUpon>201709111205258_ChangeUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709111233073_ChangeFirstNameOnUser.cs" />
+    <Compile Include="Migrations\201709111233073_ChangeFirstNameOnUser.Designer.cs">
+      <DependentUpon>201709111233073_ChangeFirstNameOnUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709111327532_ChangeStation.cs" />
+    <Compile Include="Migrations\201709111327532_ChangeStation.Designer.cs">
+      <DependentUpon>201709111327532_ChangeStation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709111347513_AddIndexToStation.cs" />
+    <Compile Include="Migrations\201709111347513_AddIndexToStation.Designer.cs">
+      <DependentUpon>201709111347513_AddIndexToStation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709111352172_AddIndexToUser.cs" />
+    <Compile Include="Migrations\201709111352172_AddIndexToUser.Designer.cs">
+      <DependentUpon>201709111352172_AddIndexToUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NetoperekContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -59,6 +87,26 @@
       <Project>{92ED9DD2-A2BE-453A-AE38-2EA8864C4081}</Project>
       <Name>Bosch.JaSemNetoperek.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201709111034499_InitialCreate.resx">
+      <DependentUpon>201709111034499_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709111205258_ChangeUser.resx">
+      <DependentUpon>201709111205258_ChangeUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709111233073_ChangeFirstNameOnUser.resx">
+      <DependentUpon>201709111233073_ChangeFirstNameOnUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709111327532_ChangeStation.resx">
+      <DependentUpon>201709111327532_ChangeStation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709111347513_AddIndexToStation.resx">
+      <DependentUpon>201709111347513_AddIndexToStation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709111352172_AddIndexToUser.resx">
+      <DependentUpon>201709111352172_AddIndexToUser.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,4 +1,5 @@
-﻿using Bosch.JaSemNetoperek.Models;
+﻿using Bosch.JaSemNetoperek.DAL.Configurations;
+using Bosch.JaSemNetoperek.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -10,7 +11,6 @@ namespace Bosch.JaSemNetoperek.DAL
 {
     public class NetoperekContext : DbContext
     {
-
         public DbSet<Vehicle> Vehicles { get; set; }
 
         public DbSet<Station> Stations { get; set; }
@@ -24,6 +24,33 @@ namespace Bosch.JaSemNetoperek.DAL
             : base("NetoperekConnection")
         {
 
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+
+            // ustawiamy klucz podstawowy
+            //modelBuilder.Entity<User>()
+            //    .HasKey(p => p.UserId);
+
+            //modelBuilder.Entity<User>().Property(p => p.FirstName)
+            //    .HasMaxLength(50)
+            //    .IsRequired();
+
+            //modelBuilder.Entity<User>().Property(p => p.LastName)
+            //    .HasMaxLength(50)
+            //    .IsRequired();
+
+
+            modelBuilder.Configurations
+                .Add(new UserConfiguration())
+                .Add(new StationConfiguration())
+                .Add(new RentalConfiguration());
+
+            // domyslny schemat
+            // modelBuilder.HasDefaultSchema("sales");
+
+            base.OnModelCreating(modelBuilder);
         }
 
     }
