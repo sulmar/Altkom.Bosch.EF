@@ -1,5 +1,8 @@
 ﻿using Bosch.JaSemNetoperek.DAL;
+using Bosch.JaSemNetoperek.DbServices;
+using Bosch.JaSemNetoperek.MockServices;
 using Bosch.JaSemNetoperek.Models;
+using Bosch.JaSemNetoperek.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,16 +23,18 @@ namespace Bosh.JaSemNetoperek.ConsoleClient
         {
             var user = new User
             {
-                FirstName = "Marcin",
+                FirstName = "Bartek",
                 LastName = "Sulecki"
             };
 
-            using (var context = new NetoperekContext())
-            {
-                context.Users.Add(user);
 
-                context.SaveChanges();
-            }
+
+
+
+            IUsersService usersService = new DbUsersService();
+
+            usersService.Add(user);
+
 
 
 

@@ -61,9 +61,21 @@
       <Project>{dcfa0239-614c-4aa5-a322-909e463dbe7c}</Project>
       <Name>Bosch.JaSemNetoperek.DAL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Bosch.JaSemNetoperek.DbServices\Bosch.JaSemNetoperek.DbServices.csproj">
+      <Project>{CEC5ADD5-FBAC-4BBA-BB29-5F409370BF82}</Project>
+      <Name>Bosch.JaSemNetoperek.DbServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Bosch.JaSemNetoperek.MockServices\Bosch.JaSemNetoperek.MockServices.csproj">
+      <Project>{592D8C83-0E92-49C6-9E3A-E7F59C1944F3}</Project>
+      <Name>Bosch.JaSemNetoperek.MockServices</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Bosch.JaSemNetoperek.Models\Bosch.JaSemNetoperek.Models.csproj">
       <Project>{92ed9dd2-a2be-453a-ae38-2ea8864c4081}</Project>
       <Name>Bosch.JaSemNetoperek.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Bosch.JaSemNetoperek.Services\Bosch.JaSemNetoperek.Services.csproj">
+      <Project>{F97BE7E1-B77F-4C5E-A911-1209290C0378}</Project>
+      <Name>Bosch.JaSemNetoperek.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
