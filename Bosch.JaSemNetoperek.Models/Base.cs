@@ -2,7 +2,7 @@
 
 namespace Bosch.JaSemNetoperek.Models
 {
-    public class Class1
+    public abstract class Base
     {
     }
 }
