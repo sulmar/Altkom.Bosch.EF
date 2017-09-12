@@ -16,5 +16,7 @@ namespace Bosch.JaSemNetoperek.Models
 
         public DateTime CreatedDate { get; set; }
 
+        public bool IsDeleted { get; set; }
+
     }
 }
