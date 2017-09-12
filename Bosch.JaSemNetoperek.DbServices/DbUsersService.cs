@@ -11,8 +11,9 @@ using System.Threading.Tasks;
 
 namespace Bosch.JaSemNetoperek.DbServices
 {
-    public class DbService<T> : IBaseService<T>
-        where T : Base
+    public class DbService<T, TKey> : IBaseService<T, TKey>
+        where T : class
+        
     {
         private readonly NetoperekContext context = new NetoperekContext();
 
@@ -28,13 +29,25 @@ namespace Bosch.JaSemNetoperek.DbServices
             return context.Set<T>().ToList();
         }
 
-        public T Get(int id)
+        public T Get(TKey id)
         {
-            return context.Set<T>().SingleOrDefault(p => p.Id == id);
+            return context.Set<T>().Find(id);
+        }
+
+        public void Remove(TKey id)
+        {
+            T item = Get(id);
+
+            context.Set<T>().Remove(item);
+        }
+
+        public void Update(T item)
+        {
+            throw new NotImplementedException();
         }
     }
 
-    public class DbUsersService : DbService<User>, IUsersService
+    public class DbUsersService : DbService<User, int>, IUsersService
     {
           
     }

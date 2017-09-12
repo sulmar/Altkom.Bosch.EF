@@ -5,31 +5,31 @@ using System.Collections.Generic;
 
 namespace Bosch.JaSemNetoperek.Services
 {
-    public interface IBaseService<T>
+    public interface IBaseService<T, TKey>
         where T : class
     {
         void Add(T item);
 
         IEnumerable<T> Get();
 
-        //void Update(T item);
+        void Update(T item);
 
-        //void Remove(int id);
+        void Remove(TKey id);
 
-        T Get(int id);
+        T Get(TKey id);
 
 
     }
 
-    public interface IUsersService : IBaseService<User>
+    public interface IUsersService : IBaseService<User, int>
     {
     }
 
-    public interface IStationsService : IBaseService<Station>
+    public interface IStationsService : IBaseService<Station, int>
     {
     }
 
-    public interface IRentalsService : IBaseService<Rental>
+    public interface IRentalsService : IBaseService<Rental, int>
     {
 
     }
