@@ -15,10 +15,118 @@ namespace Bosh.JaSemNetoperek.ConsoleClient
     {
         static void Main(string[] args)
         {
-            UpdateTest();
-
-
           //  AddUserTest();
+
+            AddRentalTest();
+
+            //AddBikeTest();
+
+            //AddCarTest();
+
+            //AddAirplaneTest();
+
+
+
+            //GetVehiclesTest();
+
+            
+            // UpdateTest();
+
+
+          
+        }
+
+        private static void AddRentalTest()
+        {
+            using (IUsersService usersService = new DbUsersService())
+            using (IStationsService stationsService = new DbStationsService())
+            using (IVehiclesService vehiclesService = new DbVehiclesService())
+            using (IRentalsService service = new DbRentalsService())
+            {
+                var rentee = usersService.Get(1);
+                var station = stationsService.Get(1);
+                var vehicle = vehiclesService.Get(1);
+
+                var rental = new Rental
+                {
+                    FromDate = DateTime.Now,
+                    FromStation = station,
+                    Rentee = rentee,
+                    Vehicle = vehicle
+                };
+
+                service.Add(rental);
+
+            }
+
+
+
+
+
+
+        }
+
+        private static void GetVehiclesTest()
+        {
+            using (IVehiclesService vehiclesService = new DbVehiclesService())
+            {
+                var cars = vehiclesService.Get<Car>();
+
+                IEnumerable<Vehicle> vehicles = vehiclesService.Get();
+
+
+
+                //var cars = vehicles.OfType<Car>();
+            }
+        }
+
+        private static void AddAirplaneTest()
+        {
+            Vehicle vehicle = new Airplane
+            {
+                Name = "Jumbo jet",
+                EngineCapacity = 10000,
+                EngineType = EngineType.Combustion,
+                MaxSpeed = 977,
+                Location = new Location { Longitude = 21.45f, Latitude = 51.04f }
+            };
+
+            using (IVehiclesService vehiclesService = new DbVehiclesService())
+            {
+                vehiclesService.Add(vehicle);
+            }
+        }
+
+        private static void AddBikeTest()
+        {
+            Vehicle vehicle = new Bike
+            {
+                Name = "Romet",
+                HasBidon = true,
+                Location = new Location { Longitude = 21.55f, Latitude = 51.04f }
+            };
+
+            using (IVehiclesService vehiclesService = new DbVehiclesService())
+            {
+                vehiclesService.Add(vehicle);
+            }
+        }
+
+        private static void AddCarTest()
+        {
+            Vehicle vehicle = new Car
+            {
+                Name = "Alfa",
+                EngineCapacity = 2200,
+                EngineType = EngineType.Combustion,
+                MaxSpeed = 260,
+                Location = new Location { Longitude = 21.55f, Latitude = 51.04f }
+            };
+
+            using (IVehiclesService vehiclesService = new DbVehiclesService())
+            {
+                vehiclesService.Add(vehicle);
+            }
         }
 
         private static void UpdateTest()
@@ -51,22 +159,22 @@ namespace Bosh.JaSemNetoperek.ConsoleClient
             };
 
 
-            //using (IUsersService usersService = new DbUsersService())
+            using (IUsersService usersService = new DbUsersService())
+            {
+                usersService.Add(user);
+            }
+
+            //var station = new Station
             //{
-            //    usersService.Add(user);
-            //}
+            //    Name = "Stacja 2",
+            //    Capacity = 10,
+            //    Location = new Location { Longitude = 21.45f, Latitude = 51.04f }
+            //};  
 
-            var station = new Station
-            {
-                Name = "Stacja 2",
-                Capacity = 10,
-                Location = new Location { Longitude = 21.45f, Latitude = 51.04f }
-            };  
-
-            using(IStationsService stationsService = new DbStationsService())
-            {
-                stationsService.Add(station);
-            }  
+            //using(IStationsService stationsService = new DbStationsService())
+            //{
+            //    stationsService.Add(station);
+            //}  
 
 
 
