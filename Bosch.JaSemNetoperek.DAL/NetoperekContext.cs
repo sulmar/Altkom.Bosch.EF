@@ -50,6 +50,40 @@ namespace Bosch.JaSemNetoperek.DAL
                 .Add(new VehicleConfiguration());
 
 
+            // TPT
+            modelBuilder.Entity<Car>().ToTable("Cars");
+            modelBuilder.Entity<Airplane>().ToTable("Airplanes");
+            modelBuilder.Entity<Bike>().ToTable("Bikes");
+            modelBuilder.Entity<MotorBike>().ToTable("MotorBikes");
+
+            // TPC
+
+            //modelBuilder.Entity<Car>().Map(m =>
+            //{
+            //    m.MapInheritedProperties();
+            //    m.ToTable("Cars");
+            //});
+
+            //modelBuilder.Entity<Airplane>().Map(m =>
+            //{
+            //    m.MapInheritedProperties();
+            //    m.ToTable("Airplanes");
+            //});
+
+            //modelBuilder.Entity<Bike>().Map(m =>
+            //{
+            //    m.MapInheritedProperties();
+            //    m.ToTable("Bikes");
+            //});
+
+            //modelBuilder.Entity<MotorBike>().Map(m =>
+            //{
+            //    m.MapInheritedProperties();
+            //    m.ToTable("MotorBikes");
+            //});
+
+
+
             modelBuilder.Conventions.Add(new DateTime2Convention());
 
             modelBuilder.Conventions.Add(new StringConvention());

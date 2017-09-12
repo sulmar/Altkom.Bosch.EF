@@ -93,6 +93,10 @@
     <Compile Include="Migrations\201709121135510_ChangeVehicle.Designer.cs">
       <DependentUpon>201709121135510_ChangeVehicle.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709121147477_ChangeVehicleStrategy.cs" />
+    <Compile Include="Migrations\201709121147477_ChangeVehicleStrategy.Designer.cs">
+      <DependentUpon>201709121147477_ChangeVehicleStrategy.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NetoperekContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -137,6 +141,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709121135510_ChangeVehicle.resx">
       <DependentUpon>201709121135510_ChangeVehicle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709121147477_ChangeVehicleStrategy.resx">
+      <DependentUpon>201709121147477_ChangeVehicleStrategy.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
