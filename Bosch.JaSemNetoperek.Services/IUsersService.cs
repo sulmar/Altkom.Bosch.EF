@@ -34,4 +34,13 @@ namespace Bosch.JaSemNetoperek.Services
     {
 
     }
+
+    public interface IVehiclesService : IBaseService<Vehicle, int>
+    {
+
+        IEnumerable<Vehicle> Get<T>() where T : Vehicle;
+        
+            
+
+    }
 }
