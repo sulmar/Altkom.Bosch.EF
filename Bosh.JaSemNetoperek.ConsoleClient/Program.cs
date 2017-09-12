@@ -28,9 +28,12 @@ namespace Bosh.JaSemNetoperek.ConsoleClient
             };
 
 
-            IUsersService usersService = new DbUsersService();
+            using (IUsersService usersService = new DbUsersService())
+            {
+                usersService.Add(user);
+            }
 
-            usersService.Add(user);
+              
 
 
 

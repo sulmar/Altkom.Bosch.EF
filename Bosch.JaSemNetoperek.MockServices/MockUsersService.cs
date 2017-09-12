@@ -15,6 +15,11 @@ namespace Bosch.JaSemNetoperek.MockServices
             users.Add(item);
         }
 
+        public void Dispose()
+        {
+            users.Clear();
+        }
+
         public System.Collections.Generic.IEnumerable<JaSemNetoperek.Models.User> Get()
         {
             return users;

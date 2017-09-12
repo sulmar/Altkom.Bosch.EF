@@ -11,37 +11,45 @@ using System.Threading.Tasks;
 
 namespace Bosch.JaSemNetoperek.DbServices
 {
-    public class DbService<T, TKey> : IBaseService<T, TKey>
-        where T : class
+    public class DbService<TEntity, TKey> : IBaseService<TEntity, TKey>
+        where TEntity : class
         
     {
         private readonly NetoperekContext context = new NetoperekContext();
 
-        public void Add(T item)
+        public void Add(TEntity item)
         {
-            context.Set<T>().Add(item);
+            context.Set<TEntity>().Add(item);
 
             context.SaveChanges();
         }
 
-        public IEnumerable<T> Get()
+
+        public void Dispose()
         {
-            return context.Set<T>().ToList();
+            context.Dispose();
         }
 
-        public T Get(TKey id)
+        public IEnumerable<TEntity> Get()
         {
-            return context.Set<T>().Find(id);
+            return context.Set<TEntity>().ToList();
+        }
+
+        public TEntity Get(TKey id)
+        {
+            return context.Set<TEntity>().Find(id);
         }
 
         public void Remove(TKey id)
         {
-            T item = Get(id);
+            TEntity item = Get(id);
 
-            context.Set<T>().Remove(item);
+            context.Set<TEntity>().Remove(item);
+
+            context.SaveChanges();
         }
 
-        public void Update(T item)
+        public void Update(TEntity item)
         {
             throw new NotImplementedException();
         }

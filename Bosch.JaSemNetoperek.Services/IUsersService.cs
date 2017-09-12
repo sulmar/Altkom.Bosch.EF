@@ -5,18 +5,18 @@ using System.Collections.Generic;
 
 namespace Bosch.JaSemNetoperek.Services
 {
-    public interface IBaseService<T, TKey>
-        where T : class
+    public interface IBaseService<TEntity, TKey> : IDisposable
+        where TEntity : class
     {
-        void Add(T item);
+        void Add(TEntity item);
 
-        IEnumerable<T> Get();
+        IEnumerable<TEntity> Get();
 
-        void Update(T item);
+        void Update(TEntity item);
 
         void Remove(TKey id);
 
-        T Get(TKey id);
+        TEntity Get(TKey id);
 
 
     }
