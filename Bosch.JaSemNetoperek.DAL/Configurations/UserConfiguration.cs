@@ -21,12 +21,14 @@ namespace Bosch.JaSemNetoperek.DAL.Configurations
 
             Property(p => p.FirstName)
                 .HasMaxLength(50)
+                .HasColumnOrder(2)
                 .IsRequired()
                 .HasColumnAnnotation(IndexAnnotation.AnnotationName,
                 new IndexAnnotation(new IndexAttribute("MyIndex", 1) { IsUnique = true }));
 
 
             Property(p => p.LastName)
+                .HasColumnOrder(1)
                 .HasMaxLength(50)
                 .IsRequired()
                 .HasColumnAnnotation(IndexAnnotation.AnnotationName,
