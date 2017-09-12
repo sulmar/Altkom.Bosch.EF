@@ -10,9 +10,20 @@ namespace Bosch.JaSemNetoperek.DbServices
         where TEntity : class
         
     {
-        protected readonly NetoperekContext context = new NetoperekContext();
+        protected readonly NetoperekContext context;
 
-        public void Add(TEntity item)
+        public DbService()
+            : this(new NetoperekContext())
+        {
+
+        }
+        
+        public DbService(NetoperekContext context)
+        {
+            this.context = context;
+        }
+
+        public virtual void Add(TEntity item)
         {
             System.Diagnostics.Trace.WriteLine(context.Entry(item).State);
 
@@ -29,17 +40,17 @@ namespace Bosch.JaSemNetoperek.DbServices
             context.Dispose();
         }
 
-        public IEnumerable<TEntity> Get()
+        public virtual IEnumerable<TEntity> Get()
         {
             return context.Set<TEntity>().ToList();
         }
 
-        public TEntity Get(TKey id)
+        public virtual TEntity Get(TKey id)
         {
             return context.Set<TEntity>().Find(id);
         }
 
-        public void Remove(TKey id)
+        public virtual void Remove(TKey id)
         {
             TEntity item = Get(id);
 
@@ -48,7 +59,7 @@ namespace Bosch.JaSemNetoperek.DbServices
             context.SaveChanges();
         }
 
-        public void Update(TEntity item)
+        public virtual void Update(TEntity item)
         {
             System.Diagnostics.Trace.WriteLine(context.Entry(item).State);
 
