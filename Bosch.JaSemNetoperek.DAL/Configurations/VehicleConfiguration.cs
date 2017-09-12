@@ -12,10 +12,13 @@ namespace Bosch.JaSemNetoperek.DAL.Configurations
     {
         public VehicleConfiguration()
         {
-            Map<Car>(m => m.Requires("VehicleType").HasValue("C"));
-            Map<Airplane>(m => m.Requires("VehicleType").HasValue("A"));
-            Map<MotorBike>(m => m.Requires("VehicleType").HasValue("M"));
-            Map<Bike>(m => m.Requires("VehicleType").HasValue("B"));
+            // TPH
+            //Map<Car>(m => m.Requires("VehicleType").HasValue("C"));
+            //Map<Airplane>(m => m.Requires("VehicleType").HasValue("A"));
+            //Map<MotorBike>(m => m.Requires("VehicleType").HasValue("M"));
+            //Map<Bike>(m => m.Requires("VehicleType").HasValue("B"));
+
+            
 
 
         }
