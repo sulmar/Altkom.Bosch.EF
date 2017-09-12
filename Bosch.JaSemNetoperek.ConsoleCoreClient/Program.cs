@@ -9,6 +9,10 @@ namespace Bosch.JaSemNetoperek.ConsoleCoreClient
     {
         static void Main(string[] args)
         {
+            AddRentalTest();
+
+            GetUsersTest();
+
             AddUserTest();
 
 
@@ -21,6 +25,19 @@ namespace Bosch.JaSemNetoperek.ConsoleCoreClient
 
            
 
+        }
+
+        private static void AddRentalTest()
+        {
+            throw new NotImplementedException();
+        }
+
+        private static void GetUsersTest()
+        {
+            using (IUsersService usersService = new DbUsersService())
+            {
+                var users = usersService.Get();
+            }
         }
 
         private static void AddBikeTest()
@@ -59,8 +76,8 @@ namespace Bosch.JaSemNetoperek.ConsoleCoreClient
         {
             var user = new User
             {
-                FirstName = "Kasia",
-                LastName = "Sulecka"
+                FirstName = "Marcin",
+                LastName = "Sulecki"
             };
 
 

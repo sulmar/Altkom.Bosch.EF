@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using Bosch.JaSemNetoperek.Models;
 using Bosch.JaSemNetoperek.DALCore;
+using System.Linq;
 
 namespace Bosch.JaSemNetoperek.DbCoreServices
 {
@@ -38,7 +39,7 @@ namespace Bosch.JaSemNetoperek.DbCoreServices
 
         public IEnumerable<User> Get()
         {
-            throw new NotImplementedException();
+            return context.Users.ToList();
         }
 
         public User Get(int id)
