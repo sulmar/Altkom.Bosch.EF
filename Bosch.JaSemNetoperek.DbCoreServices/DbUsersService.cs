@@ -5,6 +5,7 @@ using System.Text;
 using Bosch.JaSemNetoperek.Models;
 using Bosch.JaSemNetoperek.DALCore;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace Bosch.JaSemNetoperek.DbCoreServices
 {
