@@ -15,8 +15,31 @@ namespace Bosh.JaSemNetoperek.ConsoleClient
     {
         static void Main(string[] args)
         {
+            UpdateTest();
 
-            AddUserTest();
+
+          //  AddUserTest();
+        }
+
+        private static void UpdateTest()
+        {
+            Station station;
+
+            // request #1
+            using (IStationsService stationsService = new DbStationsService())
+            {
+                station = stationsService.Get(1);
+            }
+
+            station.Capacity = 99;
+
+            // request #2
+            using (IStationsService stationsService = new DbStationsService())
+            {
+                stationsService.Update(station);
+            }
+
+
         }
 
         private static void AddUserTest()

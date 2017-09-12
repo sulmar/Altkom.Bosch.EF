@@ -14,7 +14,11 @@ namespace Bosch.JaSemNetoperek.DbServices
 
         public void Add(TEntity item)
         {
+            System.Diagnostics.Trace.WriteLine(context.Entry(item).State);
+
             context.Set<TEntity>().Add(item);
+
+            System.Diagnostics.Trace.WriteLine(context.Entry(item).State);
 
             context.SaveChanges();
         }
@@ -46,7 +50,19 @@ namespace Bosch.JaSemNetoperek.DbServices
 
         public void Update(TEntity item)
         {
-            throw new NotImplementedException();
+            System.Diagnostics.Trace.WriteLine(context.Entry(item).State);
+
+            context.Entry(item).State = System.Data.Entity.EntityState.Modified;
+
+            // modyfikacja pojedynczej wlasciwosci 
+            // context.Set<TEntity>().Attach(item);
+            // context.Entry(item).Property("Name").IsModified = true;
+
+
+            System.Diagnostics.Trace.WriteLine(context.Entry(item).State);
+
+            context.SaveChanges();
+            // throw new NotImplementedException();
         }
     }
 }
