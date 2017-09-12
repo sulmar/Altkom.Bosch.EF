@@ -9,11 +9,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bosch.JaSemNetoperek.DAL", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bosh.JaSemNetoperek.ConsoleClient", "Bosh.JaSemNetoperek.ConsoleClient\Bosh.JaSemNetoperek.ConsoleClient.csproj", "{1D482DF6-2E43-44E9-9688-A79CB6E016BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bosch.JaSemNetoperek.Services", "Bosch.JaSemNetoperek.Services\Bosch.JaSemNetoperek.Services.csproj", "{F97BE7E1-B77F-4C5E-A911-1209290C0378}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bosch.JaSemNetoperek.Services", "Bosch.JaSemNetoperek.Services\Bosch.JaSemNetoperek.Services.csproj", "{F97BE7E1-B77F-4C5E-A911-1209290C0378}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bosch.JaSemNetoperek.MockServices", "Bosch.JaSemNetoperek.MockServices\Bosch.JaSemNetoperek.MockServices.csproj", "{592D8C83-0E92-49C6-9E3A-E7F59C1944F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bosch.JaSemNetoperek.MockServices", "Bosch.JaSemNetoperek.MockServices\Bosch.JaSemNetoperek.MockServices.csproj", "{592D8C83-0E92-49C6-9E3A-E7F59C1944F3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bosch.JaSemNetoperek.DbServices", "Bosch.JaSemNetoperek.DbServices\Bosch.JaSemNetoperek.DbServices.csproj", "{CEC5ADD5-FBAC-4BBA-BB29-5F409370BF82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bosch.JaSemNetoperek.DALCore", "Bosch.JaSemNetoperek.DALCore\Bosch.JaSemNetoperek.DALCore.csproj", "{E9D5071A-B4F1-44B8-960A-CAB46F8BF47D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bosch.JaSemNetoperek.ConsoleCoreClient", "Bosch.JaSemNetoperek.ConsoleCoreClient\Bosch.JaSemNetoperek.ConsoleCoreClient.csproj", "{E9516126-0B12-4111-B5D4-CA97913B9A44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bosch.JaSemNetoperek.DbCoreServices", "Bosch.JaSemNetoperek.DbCoreServices\Bosch.JaSemNetoperek.DbCoreServices.csproj", "{EC409C3A-FDAB-4975-8CAF-F18F7F2C0005}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +51,18 @@ Global
 		{CEC5ADD5-FBAC-4BBA-BB29-5F409370BF82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEC5ADD5-FBAC-4BBA-BB29-5F409370BF82}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CEC5ADD5-FBAC-4BBA-BB29-5F409370BF82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9D5071A-B4F1-44B8-960A-CAB46F8BF47D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9D5071A-B4F1-44B8-960A-CAB46F8BF47D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9D5071A-B4F1-44B8-960A-CAB46F8BF47D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9D5071A-B4F1-44B8-960A-CAB46F8BF47D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9516126-0B12-4111-B5D4-CA97913B9A44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9516126-0B12-4111-B5D4-CA97913B9A44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9516126-0B12-4111-B5D4-CA97913B9A44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9516126-0B12-4111-B5D4-CA97913B9A44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC409C3A-FDAB-4975-8CAF-F18F7F2C0005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC409C3A-FDAB-4975-8CAF-F18F7F2C0005}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC409C3A-FDAB-4975-8CAF-F18F7F2C0005}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC409C3A-FDAB-4975-8CAF-F18F7F2C0005}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
