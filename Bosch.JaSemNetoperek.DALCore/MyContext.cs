@@ -5,6 +5,15 @@ using System;
 
 namespace Bosch.JaSemNetoperek.DALCore
 {
+    public class DbUserDefinedMethods
+    {
+        public static int VehiclesCount(int stationId)
+        {
+            throw new InvalidOperationException();
+        }
+
+    }
+
     public class MyContext : DbContext
     {
         
@@ -30,13 +39,18 @@ namespace Bosch.JaSemNetoperek.DALCore
             optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=MyDatabase2;Trusted_Connection=True;");
         }
 
-
+     
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new UserConfiguration());
             modelBuilder.ApplyConfiguration(new StationConfiguration());
             modelBuilder.ApplyConfiguration(new VehicleConfiguration());
             modelBuilder.ApplyConfiguration(new RentalConfiguration());
+
+            // modelBuilder.HasDbFunction(this.GetType().GetMethod("Soundex"));
+
+            modelBuilder.HasDbFunction(()=>DbUserDefinedMethods.VehiclesCount(default(int)));
+
 
             #region StringConvention
 

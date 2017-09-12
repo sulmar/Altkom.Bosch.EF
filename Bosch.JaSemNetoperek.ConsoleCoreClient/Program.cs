@@ -29,7 +29,26 @@ namespace Bosch.JaSemNetoperek.ConsoleCoreClient
 
         private static void AddRentalTest()
         {
-            throw new NotImplementedException();
+            using (IUsersService usersService = new DbUsersService())
+            using (IStationsService stationsService = new DbStationsService())
+            using (IVehiclesService vehiclesService = new DbVehiclesService())
+            using (IRentalsService service = new DbRentalsService())
+            {
+                var rentee = usersService.Get(1);
+                var station = stationsService.Get(1);
+                var vehicle = vehiclesService.Get(1);
+
+                var rental = new Rental
+                {
+                    FromDate = DateTime.Now,
+                    FromStation = station,
+                    Rentee = rentee,
+                    Vehicle = vehicle
+                };
+
+                service.Add(rental);
+
+            }
         }
 
         private static void GetUsersTest()

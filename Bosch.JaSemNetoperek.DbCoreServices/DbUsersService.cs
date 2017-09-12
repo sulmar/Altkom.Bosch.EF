@@ -42,9 +42,10 @@ namespace Bosch.JaSemNetoperek.DbCoreServices
             return context.Users.ToList();
         }
 
+
         public User Get(int id)
         {
-            throw new NotImplementedException();
+            return context.Users.Find(id);
         }
 
         public void Remove(int id)

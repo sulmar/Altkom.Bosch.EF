@@ -28,7 +28,9 @@ namespace Bosch.JaSemNetoperek.DbCoreServices
         {
             System.Diagnostics.Trace.WriteLine(context.Entry(item).State);
 
-            context.Set<TEntity>().Add(item);
+            // context.Set<TEntity>().Add(item);
+
+            context.Set<TEntity>().Attach(item);
 
             var entities = context.ChangeTracker.Entries();
 
