@@ -50,6 +50,7 @@
     <Compile Include="Configurations\RentalConfiguration.cs" />
     <Compile Include="Configurations\StationConfiguration.cs" />
     <Compile Include="Configurations\UserConfiguration.cs" />
+    <Compile Include="Configurations\VehicleConfiguration.cs" />
     <Compile Include="Conventions\DateTime2Convention.cs" />
     <Compile Include="Conventions\StringConvention.cs" />
     <Compile Include="Migrations\201709111034499_InitialCreate.cs" />
@@ -87,6 +88,10 @@
     <Compile Include="Migrations\201709120911032_AddCreateDateToUser.cs" />
     <Compile Include="Migrations\201709120911032_AddCreateDateToUser.Designer.cs">
       <DependentUpon>201709120911032_AddCreateDateToUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709121135510_ChangeVehicle.cs" />
+    <Compile Include="Migrations\201709121135510_ChangeVehicle.Designer.cs">
+      <DependentUpon>201709121135510_ChangeVehicle.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NetoperekContext.cs" />
@@ -129,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709120911032_AddCreateDateToUser.resx">
       <DependentUpon>201709120911032_AddCreateDateToUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709121135510_ChangeVehicle.resx">
+      <DependentUpon>201709121135510_ChangeVehicle.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

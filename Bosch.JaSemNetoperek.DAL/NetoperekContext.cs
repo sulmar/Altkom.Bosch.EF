@@ -46,7 +46,8 @@ namespace Bosch.JaSemNetoperek.DAL
             modelBuilder.Configurations
                 .Add(new UserConfiguration())
                 .Add(new StationConfiguration())
-                .Add(new RentalConfiguration());
+                .Add(new RentalConfiguration())
+                .Add(new VehicleConfiguration());
 
 
             modelBuilder.Conventions.Add(new DateTime2Convention());
