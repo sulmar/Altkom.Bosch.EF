@@ -19,7 +19,8 @@ namespace Bosch.JaSemNetoperek.DALCore.Configurations
              .HasMaxLength(50)
              .IsRequired();
 
-
+            // Global query filters 
+            builder.HasQueryFilter(p => !p.IsDeleted);
         }
     }
 }
