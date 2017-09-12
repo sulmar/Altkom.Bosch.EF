@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="DbService.cs" />
     <Compile Include="DbUsersService.cs" />
+    <Compile Include="DbVehiclesService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
