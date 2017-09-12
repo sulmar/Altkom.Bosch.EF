@@ -1,4 +1,5 @@
 ﻿using Bosch.JaSemNetoperek.DAL.Configurations;
+using Bosch.JaSemNetoperek.DAL.Conventions;
 using Bosch.JaSemNetoperek.Models;
 using System;
 using System.Collections.Generic;
@@ -46,6 +47,11 @@ namespace Bosch.JaSemNetoperek.DAL
                 .Add(new UserConfiguration())
                 .Add(new StationConfiguration())
                 .Add(new RentalConfiguration());
+
+
+            modelBuilder.Conventions.Add(new DateTime2Convention());
+
+            modelBuilder.Conventions.Add(new StringConvention());
 
             // domyslny schemat
             // modelBuilder.HasDefaultSchema("sales");

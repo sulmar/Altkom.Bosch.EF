@@ -13,6 +13,8 @@ namespace Bosch.JaSemNetoperek.Models
         public string LastName { get; set; }
 
         public string FullName => $"{FirstName} {LastName}";
-        
+
+        public DateTime CreatedDate { get; set; }
+
     }
 }

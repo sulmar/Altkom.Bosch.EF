@@ -23,17 +23,27 @@ namespace Bosh.JaSemNetoperek.ConsoleClient
         {
             var user = new User
             {
-                FirstName = "Bartek",
-                LastName = "Sulecki"
+                FirstName = "Kasia",
+                LastName = "Sulecka"
             };
 
 
-            using (IUsersService usersService = new DbUsersService())
-            {
-                usersService.Add(user);
-            }
+            //using (IUsersService usersService = new DbUsersService())
+            //{
+            //    usersService.Add(user);
+            //}
 
-              
+            var station = new Station
+            {
+                Name = "Stacja 2",
+                Capacity = 10,
+                Location = new Location { Longitude = 21.45f, Latitude = 51.04f }
+            };  
+
+            using(IStationsService stationsService = new DbStationsService())
+            {
+                stationsService.Add(station);
+            }  
 
 
 

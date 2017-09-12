@@ -17,6 +17,10 @@ namespace Bosch.JaSemNetoperek.DAL.Configurations
             // klucz zlozony
             // HasKey(p => new { p.FromDate, p.ToDate });
 
+
+            // Property(p => p.FromDate).HasColumnType("datetime2");
+                
+
         }
     }
 }

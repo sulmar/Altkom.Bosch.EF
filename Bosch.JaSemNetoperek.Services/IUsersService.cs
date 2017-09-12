@@ -27,6 +27,7 @@ namespace Bosch.JaSemNetoperek.Services
 
     public interface IStationsService : IBaseService<Station, int>
     {
+        Station GetByLocation(Location location);
     }
 
     public interface IRentalsService : IBaseService<Rental, int>

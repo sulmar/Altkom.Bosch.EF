@@ -50,6 +50,8 @@
     <Compile Include="Configurations\RentalConfiguration.cs" />
     <Compile Include="Configurations\StationConfiguration.cs" />
     <Compile Include="Configurations\UserConfiguration.cs" />
+    <Compile Include="Conventions\DateTime2Convention.cs" />
+    <Compile Include="Conventions\StringConvention.cs" />
     <Compile Include="Migrations\201709111034499_InitialCreate.cs" />
     <Compile Include="Migrations\201709111034499_InitialCreate.Designer.cs">
       <DependentUpon>201709111034499_InitialCreate.cs</DependentUpon>
@@ -73,6 +75,18 @@
     <Compile Include="Migrations\201709111352172_AddIndexToUser.cs" />
     <Compile Include="Migrations\201709111352172_AddIndexToUser.Designer.cs">
       <DependentUpon>201709111352172_AddIndexToUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709120830060_ChangeDateTimeToDateTime2.cs" />
+    <Compile Include="Migrations\201709120830060_ChangeDateTimeToDateTime2.Designer.cs">
+      <DependentUpon>201709120830060_ChangeDateTimeToDateTime2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709120835214_ChangeStringName.cs" />
+    <Compile Include="Migrations\201709120835214_ChangeStringName.Designer.cs">
+      <DependentUpon>201709120835214_ChangeStringName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709120911032_AddCreateDateToUser.cs" />
+    <Compile Include="Migrations\201709120911032_AddCreateDateToUser.Designer.cs">
+      <DependentUpon>201709120911032_AddCreateDateToUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NetoperekContext.cs" />
@@ -106,6 +120,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709111352172_AddIndexToUser.resx">
       <DependentUpon>201709111352172_AddIndexToUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709120830060_ChangeDateTimeToDateTime2.resx">
+      <DependentUpon>201709120830060_ChangeDateTimeToDateTime2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709120835214_ChangeStringName.resx">
+      <DependentUpon>201709120835214_ChangeStringName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709120911032_AddCreateDateToUser.resx">
+      <DependentUpon>201709120911032_AddCreateDateToUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
