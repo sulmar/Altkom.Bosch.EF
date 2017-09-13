@@ -12,13 +12,13 @@ namespace Bosch.JaSemNetoperek.DAL
 {
     public class NetoperekContext : DbContext
     {
-        public DbSet<Vehicle> Vehicles { get; set; }
+        public virtual DbSet<Vehicle> Vehicles { get; set; }
 
-        public DbSet<Station> Stations { get; set; }
+        public virtual DbSet<Station> Stations { get; set; }
 
-        public DbSet<User> Users { get; set; }
+        public virtual DbSet<User> Users { get; set; }
 
-        public DbSet<Rental> Rentals { get; set; }
+        public virtual DbSet<Rental> Rentals { get; set; }
 
 
         public NetoperekContext()

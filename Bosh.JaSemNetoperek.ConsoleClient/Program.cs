@@ -16,6 +16,8 @@ namespace Bosh.JaSemNetoperek.ConsoleClient
         static void Main(string[] args)
         {
 
+            GetRentalsTest();
+
             ConcurencyTest();
 
 
@@ -44,6 +46,14 @@ namespace Bosh.JaSemNetoperek.ConsoleClient
 
 
 
+        }
+
+        private static void GetRentalsTest()
+        {
+            using (IRentalsService service = new DbRentalsService())
+            {
+                var rentals = service.Get();
+            }
         }
 
         private static void ConcurencyTest()

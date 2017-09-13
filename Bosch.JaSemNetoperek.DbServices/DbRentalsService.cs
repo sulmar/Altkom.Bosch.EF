@@ -7,11 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Transactions;
+using System.Data.Entity;
 
 namespace Bosch.JaSemNetoperek.DbServices
 {
     public class DbRentalsService : DbService<Rental, int>, IRentalsService
     {
+
+        // Eadger loading
+        public override IEnumerable<Rental> Get()
+        {            
+            return context.Rentals
+                .Include(p => p.Rentee)
+                .Include(p => p.Vehicle)
+                .ToList();
+        }
+
         // obsługa transakcji rozproszonych
         public override void Add(Rental item)
         {            

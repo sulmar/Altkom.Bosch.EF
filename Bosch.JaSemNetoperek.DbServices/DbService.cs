@@ -16,7 +16,7 @@ namespace Bosch.JaSemNetoperek.DbServices
         public DbService()
             : this(new NetoperekContext())
         {
-
+            
         }
         
         public DbService(NetoperekContext context)
@@ -24,6 +24,9 @@ namespace Bosch.JaSemNetoperek.DbServices
             this.context = context;
 
             this.context.Database.Log = Console.WriteLine;
+
+            this.context.Configuration.LazyLoadingEnabled = false;
+            this.context.Configuration.ProxyCreationEnabled = false;
         }
 
         public virtual void Add(TEntity item)
