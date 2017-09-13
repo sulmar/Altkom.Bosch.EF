@@ -3,6 +3,7 @@ using Bosch.JaSemNetoperek.Services;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Bosch.JaSemNetoperek.MockServices
 {
@@ -28,6 +29,11 @@ namespace Bosch.JaSemNetoperek.MockServices
         public User Get(int id)
         {
             throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<User>> GetAsync()
+        {
+            return Task.Run(() => Get());
         }
 
         public void Remove(int id)

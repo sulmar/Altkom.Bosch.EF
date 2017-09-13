@@ -15,6 +15,8 @@ namespace Bosh.JaSemNetoperek.ConsoleClient
     {
         static void Main(string[] args)
         {
+            GetUsersAsyncTest();
+
             GetsUsersTest();
 
             SetIsDeletedStatusTest();
@@ -50,6 +52,22 @@ namespace Bosh.JaSemNetoperek.ConsoleClient
 
 
         }
+
+
+        private static void GetUsersAsyncTest()
+        {
+            Task.Run(() => GetUsersAsync());
+        }
+
+        private static async Task GetUsersAsync()
+        {
+            using (IUsersService service = new DbUsersService())
+            {
+                var users = await service.GetAsync();
+            }
+        }
+
+
 
         private static void GetsUsersTest()
         {

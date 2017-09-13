@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Bosch.JaSemNetoperek.Services
 {
@@ -11,6 +12,8 @@ namespace Bosch.JaSemNetoperek.Services
         void Add(TEntity item);
 
         IEnumerable<TEntity> Get();
+
+        Task<IEnumerable<TEntity>> GetAsync();
 
         void Update(TEntity item);
 
@@ -24,6 +27,9 @@ namespace Bosch.JaSemNetoperek.Services
     public interface IUsersService : IBaseService<User, int>
     {
         void SetIsDeletedStatus(bool isDeleted);
+
+        
+
     }
 
     public interface IStationsService : IBaseService<Station, int>
