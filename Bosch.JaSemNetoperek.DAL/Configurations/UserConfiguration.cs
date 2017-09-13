@@ -34,7 +34,10 @@ namespace Bosch.JaSemNetoperek.DAL.Configurations
                 .HasColumnAnnotation(IndexAnnotation.AnnotationName,
                 new IndexAnnotation(new IndexAttribute("MyIndex", 2) { IsUnique = true } ));
 
-            
+
+            Property(p => p.RowVersion)
+                  .IsConcurrencyToken()
+                  .IsRowVersion();
         }
     }
 }
