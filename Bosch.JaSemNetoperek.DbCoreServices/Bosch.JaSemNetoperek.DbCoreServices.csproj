@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Bosch.JaSemNetoperek.DALCore\Bosch.JaSemNetoperek.DALCore.csproj" />
+    <ProjectReference Include="..\Bosch.JaSemNetoperek.Models\Bosch.JaSemNetoperek.Models.csproj" />
+    <ProjectReference Include="..\Bosch.JaSemNetoperek.Services\Bosch.JaSemNetoperek.Services.csproj" />
+  </ItemGroup>
+
+</Project>

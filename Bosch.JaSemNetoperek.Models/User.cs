@@ -18,5 +18,7 @@ namespace Bosch.JaSemNetoperek.Models
 
         public byte[] RowVersion { get; set; }
 
+        public bool IsDeleted { get; set; }
+
     }
 }

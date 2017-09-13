@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.3
+VisualStudioVersion = 15.0.26730.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bosch.JaSemNetoperek.Models", "Bosch.JaSemNetoperek.Models\Bosch.JaSemNetoperek.Models.csproj", "{92ED9DD2-A2BE-453A-AE38-2EA8864C4081}"
 EndProject
@@ -9,11 +9,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bosch.JaSemNetoperek.DAL", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bosh.JaSemNetoperek.ConsoleClient", "Bosh.JaSemNetoperek.ConsoleClient\Bosh.JaSemNetoperek.ConsoleClient.csproj", "{1D482DF6-2E43-44E9-9688-A79CB6E016BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bosch.JaSemNetoperek.Services", "Bosch.JaSemNetoperek.Services\Bosch.JaSemNetoperek.Services.csproj", "{F97BE7E1-B77F-4C5E-A911-1209290C0378}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bosch.JaSemNetoperek.Services", "Bosch.JaSemNetoperek.Services\Bosch.JaSemNetoperek.Services.csproj", "{F97BE7E1-B77F-4C5E-A911-1209290C0378}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bosch.JaSemNetoperek.MockServices", "Bosch.JaSemNetoperek.MockServices\Bosch.JaSemNetoperek.MockServices.csproj", "{592D8C83-0E92-49C6-9E3A-E7F59C1944F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bosch.JaSemNetoperek.MockServices", "Bosch.JaSemNetoperek.MockServices\Bosch.JaSemNetoperek.MockServices.csproj", "{592D8C83-0E92-49C6-9E3A-E7F59C1944F3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bosch.JaSemNetoperek.DbServices", "Bosch.JaSemNetoperek.DbServices\Bosch.JaSemNetoperek.DbServices.csproj", "{CEC5ADD5-FBAC-4BBA-BB29-5F409370BF82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bosh.JaSemNetoperek.ConsoleCoreClient", "Bosh.JaSemNetoperek.ConsoleCoreClient\Bosh.JaSemNetoperek.ConsoleCoreClient.csproj", "{EE095174-9617-4681-ADB1-73F94FEC5431}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bosch.JaSemNetoperek.DALCore", "Bosch.JaSemNetoperek.DALCore\Bosch.JaSemNetoperek.DALCore.csproj", "{12D03551-D914-4ABE-AFA7-9C7D703326DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bosch.JaSemNetoperek.DbCoreServices", "Bosch.JaSemNetoperek.DbCoreServices\Bosch.JaSemNetoperek.DbCoreServices.csproj", "{247CA49D-8017-4C43-AFB4-DEB87BB8F9ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +51,18 @@ Global
 		{CEC5ADD5-FBAC-4BBA-BB29-5F409370BF82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEC5ADD5-FBAC-4BBA-BB29-5F409370BF82}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CEC5ADD5-FBAC-4BBA-BB29-5F409370BF82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE095174-9617-4681-ADB1-73F94FEC5431}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE095174-9617-4681-ADB1-73F94FEC5431}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE095174-9617-4681-ADB1-73F94FEC5431}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE095174-9617-4681-ADB1-73F94FEC5431}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12D03551-D914-4ABE-AFA7-9C7D703326DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12D03551-D914-4ABE-AFA7-9C7D703326DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12D03551-D914-4ABE-AFA7-9C7D703326DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12D03551-D914-4ABE-AFA7-9C7D703326DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{247CA49D-8017-4C43-AFB4-DEB87BB8F9ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{247CA49D-8017-4C43-AFB4-DEB87BB8F9ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{247CA49D-8017-4C43-AFB4-DEB87BB8F9ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{247CA49D-8017-4C43-AFB4-DEB87BB8F9ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
