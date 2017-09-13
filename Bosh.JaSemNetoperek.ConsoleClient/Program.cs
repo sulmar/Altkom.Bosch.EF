@@ -15,6 +15,7 @@ namespace Bosh.JaSemNetoperek.ConsoleClient
     {
         static void Main(string[] args)
         {
+            RowVersionTest();
 
             ConcurencyTest();
 
@@ -44,6 +45,33 @@ namespace Bosh.JaSemNetoperek.ConsoleClient
 
 
 
+        }
+
+
+        private static void RowVersionTest()
+        {
+            using (IUsersService service1 = new DbUsersService())
+            using (IUsersService service2 = new DbUsersService())
+            {
+                var user1 = service1.Get(1);
+
+                var user2 = service2.Get(1);
+
+                user1.FirstName = "Jan";
+                user1.LastName = "Kowalski";
+
+                user2.FirstName = "Ania";
+                user2.LastName = "Kowalska";
+
+                service2.Update(user2);
+
+
+                service1.Update(user1);
+
+                
+
+
+            }
         }
 
         private static void ConcurencyTest()
