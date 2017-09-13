@@ -15,6 +15,10 @@ namespace Bosh.JaSemNetoperek.ConsoleClient
     {
         static void Main(string[] args)
         {
+            GetsUsersTest();
+
+            SetIsDeletedStatusTest();
+
             RowVersionTest();
 
             ConcurencyTest();
@@ -47,6 +51,21 @@ namespace Bosh.JaSemNetoperek.ConsoleClient
 
         }
 
+        private static void GetsUsersTest()
+        {
+            using (IUsersService service = new DbUsersService())
+            {
+                var users = service.Get();
+            }
+        }
+
+        private static void SetIsDeletedStatusTest()
+        {
+            using (IUsersService service = new DbUsersService())
+            {
+                service.SetIsDeletedStatus(true);
+            }
+        }
 
         private static void RowVersionTest()
         {

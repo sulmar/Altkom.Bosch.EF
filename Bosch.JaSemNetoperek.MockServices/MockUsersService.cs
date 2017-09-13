@@ -35,6 +35,11 @@ namespace Bosch.JaSemNetoperek.MockServices
             throw new NotImplementedException();
         }
 
+        public void SetIsDeletedStatus(bool isDeleted)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Update(User item)
         {
             throw new NotImplementedException();

@@ -23,6 +23,7 @@ namespace Bosch.JaSemNetoperek.Services
 
     public interface IUsersService : IBaseService<User, int>
     {
+        void SetIsDeletedStatus(bool isDeleted);
     }
 
     public interface IStationsService : IBaseService<Station, int>

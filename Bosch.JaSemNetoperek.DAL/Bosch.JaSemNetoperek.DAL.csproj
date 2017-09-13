@@ -101,6 +101,10 @@
     <Compile Include="Migrations\201709130849096_AddRowVersionToUser.Designer.cs">
       <DependentUpon>201709130849096_AddRowVersionToUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709130929358_AddIsDeletedToUser.cs" />
+    <Compile Include="Migrations\201709130929358_AddIsDeletedToUser.Designer.cs">
+      <DependentUpon>201709130929358_AddIsDeletedToUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="NetoperekContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -151,6 +155,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709130849096_AddRowVersionToUser.resx">
       <DependentUpon>201709130849096_AddRowVersionToUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709130929358_AddIsDeletedToUser.resx">
+      <DependentUpon>201709130929358_AddIsDeletedToUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
