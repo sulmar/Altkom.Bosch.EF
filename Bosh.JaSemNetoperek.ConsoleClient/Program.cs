@@ -15,25 +15,62 @@ namespace Bosh.JaSemNetoperek.ConsoleClient
     {
         static void Main(string[] args)
         {
-          //  AddUserTest();
+
+            ConcurencyTest();
+
+
+            Console.WriteLine("Press any key to exit.");
+
+            Console.ReadKey();
+
+            return;
+
+            AddStationTest();
+
+            AddUserTest();
+
+            AddBikeTest();
+
+            AddCarTest();
+
+            AddAirplaneTest();
 
             AddRentalTest();
 
-            //AddBikeTest();
-
-            //AddCarTest();
-
-            //AddAirplaneTest();
+            GetVehiclesTest();
 
 
-
-            //GetVehiclesTest();
-
-            
             // UpdateTest();
 
 
-          
+
+        }
+
+        private static void ConcurencyTest()
+        {
+            using (IStationsService service1 = new DbStationsService())
+            using (IStationsService service2 = new DbStationsService())
+            {
+                var station1 = service1.Get(1);
+
+                var station2 = service2.Get(1);
+
+                station1.Name = "Stacja 10";
+
+                station2.Name = "Stacja 22";
+
+                try
+                {
+                    service2.Update(station2);
+
+                    service1.Update(station1);
+                }
+                catch(InvalidOperationException e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+            }
+
         }
 
         private static void AddRentalTest()
@@ -150,6 +187,21 @@ namespace Bosh.JaSemNetoperek.ConsoleClient
 
         }
 
+        private static void AddStationTest()
+        {
+            var station = new Station
+            {
+                Name = "Stacja 1",
+                Capacity = 10,
+                Location = new Location { Longitude = 21.45f, Latitude = 51.04f }
+            };
+
+            using (IStationsService stationsService = new DbStationsService())
+            {
+                stationsService.Add(station);
+            }
+        }
+
         private static void AddUserTest()
         {
             var user = new User
@@ -164,17 +216,7 @@ namespace Bosh.JaSemNetoperek.ConsoleClient
                 usersService.Add(user);
             }
 
-            //var station = new Station
-            //{
-            //    Name = "Stacja 2",
-            //    Capacity = 10,
-            //    Location = new Location { Longitude = 21.45f, Latitude = 51.04f }
-            //};  
-
-            //using(IStationsService stationsService = new DbStationsService())
-            //{
-            //    stationsService.Add(station);
-            //}  
+          
 
 
 

@@ -3,6 +3,7 @@ using Bosch.JaSemNetoperek.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity.Infrastructure;
 
 namespace Bosch.JaSemNetoperek.DbServices
 {
@@ -21,6 +22,8 @@ namespace Bosch.JaSemNetoperek.DbServices
         public DbService(NetoperekContext context)
         {
             this.context = context;
+
+            this.context.Database.Log = Console.WriteLine;
         }
 
         public virtual void Add(TEntity item)
@@ -72,8 +75,15 @@ namespace Bosch.JaSemNetoperek.DbServices
 
             System.Diagnostics.Trace.WriteLine(context.Entry(item).State);
 
-            context.SaveChanges();
-            // throw new NotImplementedException();
+            try
+            {
+                context.SaveChanges();
+            }
+            catch(DbUpdateConcurrencyException e)
+            {
+                throw new InvalidOperationException("Obiekt zostal juz zmodyfikowany");
+            }
+            // NotImplementedException();
         }
     }
 }

@@ -22,6 +22,8 @@ namespace Bosch.JaSemNetoperek.DAL.Configurations
                 new IndexAnnotation(new IndexAttribute { IsUnique = true }));
               ;
 
+            Property(p => p.Name)
+                .IsConcurrencyToken();
             
         }
     }
