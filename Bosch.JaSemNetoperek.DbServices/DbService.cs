@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Data.Entity.Infrastructure;
+using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace Bosch.JaSemNetoperek.DbServices
 {
@@ -54,6 +56,11 @@ namespace Bosch.JaSemNetoperek.DbServices
         public virtual TEntity Get(TKey id)
         {
             return context.Set<TEntity>().Find(id);
+        }
+
+        public async Task<IEnumerable<TEntity>> GetAsync()
+        {
+            return await context.Set<TEntity>().ToListAsync();
         }
 
         public virtual void Remove(TKey id)

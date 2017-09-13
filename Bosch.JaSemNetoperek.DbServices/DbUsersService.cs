@@ -6,6 +6,8 @@ using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
+using System.Collections.Generic;
 
 namespace Bosch.JaSemNetoperek.DbServices
 {
@@ -13,7 +15,39 @@ namespace Bosch.JaSemNetoperek.DbServices
 
     public class DbUsersService : DbService<User, int>, IUsersService
     {
-          
+        public override IEnumerable<User> Get()
+        {
+            var sql = "SELECT * FROM dbo.Users";
+
+            var users = context.Database.SqlQuery<User>(sql).ToList();
+
+            return users;
+            
+        }
+
+
+        public void SetIsDeletedStatus(bool isDeleted)
+        {
+
+            // nieefektywny sposób:
+
+            //foreach(var user in context.Users)
+            //{
+            //    user.IsDeleted = isDeleted;
+            //}
+
+            //context.SaveChanges();
+
+
+            // bezpieczny sposób
+
+            string sql = "UPDATE dbo.Users SET IsDeleted=@isDeleted";
+
+            SqlParameter isDeletedParameter = new SqlParameter("isDeleted", System.Data.SqlDbType.Bit);
+            isDeletedParameter.Value = isDeleted;
+
+            context.Database.ExecuteSqlCommand(sql, isDeletedParameter);            
+        }
     }
 
     public class DbStationsService : DbService<Station, int>, IStationsService
